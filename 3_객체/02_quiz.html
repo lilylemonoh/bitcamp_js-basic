@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+        <script>
+/*
+- 요구사항
+1. 사용자에게 계정을 입력받으세요.
+2. 입력된 계정이 존재하는 계정이 아니라면
+   "존재하지 않는 회원입니다"를 출력하세요.
+3. 계정이 존재한다면 비밀번호를 입력받으세요.
+4. 비밀번호가 입력한 아이디에 대응해서 일치한다면
+   "xxx님 환영합니다!"을 출력하고 반복문을 탈출하세요.
+5. 비밀번호가 다르다면 "비밀번호가 틀렸습니다" 를 출력하세요.
+6. 로그인이 성공할때까지 반복하세요.
+*/
+var userInfo = {
+    userList: [{
+            account: 'kim1234',
+            password: 'kkk1234',
+            username: '김두한'
+        },
+        {
+            account: 'park9876',
+            password: 'ppp9999',
+            username: '박찬호'
+        },
+        {
+            account: 'hong7766',
+            password: 'hhh1234',
+            username: '홍길동'
+        },
+    ]
+};
+
+/* var userInfo의 프로퍼티로는 userList 하나뿐임
+userList 키의 값이 객체 배열 3개임
+
+userList[0]은 프로퍼티 3개인데 
+account
+password
+username
+3개 키와 값을 가짐
+
+이런 userList 배열이 3개 있음
+
+kim1234에 접근하려면
+userInfo.userList[0].account임
+
+park9876의 비밀번호에 접근하려면
+userInfo.userList[1].password임
+*/
+
+while(true) {
+    // 계정 입력받기
+    var userAccountInput = prompt('계정을 입력하세요.');
+    // 존재하는지 검증-> 존재하면 flag에 true 저장. 누구인지 userNumber에 저장
+    for(var i = 0; i < 3; i++){
+        if(userInfo.userList[i].account == userAccountInput){
+        var accountFlag = true;
+        var userNumber = i;
+        }
+    }
+
+    if(accountFlag) {
+        var userPasswordInput = prompt('비밀번호를 입력하세요');
+
+        if(userPasswordInput === userInfo.userList[userNumber].password) {
+            alert(`${userInfo.userList[userNumber].username}님 환영합니다!`);
+            break;
+        } else{
+            alert(`비밀번호가 틀렸습니다.`);
+        }
+    } else {
+        alert(`${userAccountInput}은(는) 존재하지 않는 회원입니다.`);
+    }
+
+}
+
+
+
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
