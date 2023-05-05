@@ -6,6 +6,31 @@
     </head>
     <body>
         <div><span id = "order">1</span>번째 참가자</div>
+        <div>제시어 : <span id="word"></span></div>
+        <input type="text">
+        <button>입력</button>
+        <script>
+            const number = Number(prompt('몇 명이 참가하나요?'));
+            const $button = document.querySelector('button');
+            const $input = document.querySelector('input');
+            const $word = document.querySelector('#word');
+            let word; // 제시어
+            let newWord; // 현재 단어
 
+            const onClickButton = () => {
+                if(!word){ // 제시어가 비어 있는가?
+                    word = newWord; // 입력한 단어가 제시어가 된다.
+                    $word.textContent = word; // 화면에 제시어 표시
+                } else {
+                    // 비어 있지 않다.
+                }
+            };
+            const onInput = (event) => {
+                newWord = event.target.value;
+            };
+            //0204부터
+            $button.addEventListener('click', onClickButton);
+            $input.addEventListener('input', onInput);
+        </script>
     </body>
 </html>
