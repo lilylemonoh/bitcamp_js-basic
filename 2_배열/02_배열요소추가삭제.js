@@ -2,7 +2,7 @@ var pets = ['멍멍이', '야옹이', '룰루'];
 
 console.log(`pets : ${pets}`);
 
-//pets[3] = '어완자';
+//pets[3] = '어완자'; //push - 마지막에 추가
 pets.push('어완자');
 pets.push('땡칠이');
 console.log(`pets:${pets}`);

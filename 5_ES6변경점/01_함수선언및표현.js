@@ -26,7 +26,7 @@ const sub = function(n1, n2) {
 console.log(sub(20, 10));
 
 // 함수를 배열에 저장할 수도 있음. 
-// 자바스크립트의 배열을 자바와 달리 자료형이 달라도 저장 가능
+// 자바스크립트의 배열은 자바와 달리 자료형이 달라도 저장 가능
 
 const fArr = [10, 'hello', true, {}, [], add, function(){console.log('ㄱㄱ')}];
 
