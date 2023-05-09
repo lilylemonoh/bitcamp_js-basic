@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+        <style>
+            span {
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="greet">
+
+            Hello<span>World!</span>
+        </div>
+        <script>
+            const $greet = document.getElementById("greet");
+            console.log($greet.textContent);
+            console.log($greet.innerHTML);
+
+            $greet.innerHTML += '<h1><span>반갑습니다</span></h1>';
+
+
+        </script>
+    </body>
+</html>

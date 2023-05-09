@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+    </head>
+    <body>
+        <ul>
+            <li id="apple">사과</li>
+            <li id="banana" style="background:greenyellow;">바나나</li>
+            <li id="grape">포도</li>
+            <li id="peach">복숭아</li>
+        </ul>
+
+        <script>
+            const $banana = document.getElementById("banana");
+            console.log($banana);
+
+            let setColorNumber = prompt("banana의 배경색깔을 지정해주세요. 1: 빨강, 2: 파랑");
+            if(setColorNumber === "1") {
+                $banana.style.background = "red";
+            } else if(setColorNumber === "2") {
+                $banana.style.background = "blue";
+            }
+            $banana.style.width = "200px";
+
+            $peach = document.getElementById("peach");
+            $peach.style.color = "pink";
+
+        </script>
+    </body>
+</html>

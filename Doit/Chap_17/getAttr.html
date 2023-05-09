@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+    </head>
+    <body>
+
+        <div id="prod-pic">
+            <img src="img/hobak.jpg" alt="에디오피아 게뎁" id="cup" width="200"
+            height="200" onclick="displaySrc()">
+
+        </div>
+
+        <script>
+
+            function displaySrc(){
+                let $cup = document.querySelector("#cup");
+                alert(`이미지 소스 : ${$cup.getAttribute("src")}`);
+            }
+            
+            function changePic(){
+                let newPic = this.src;
+                $cup.setAttribute("src", newPic);
+            }
+
+        </script>
+
+    </body>
+</html>

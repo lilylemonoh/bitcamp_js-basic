@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+    </head>
+    <body>
+
+        <div id="wrap">
+            <ul id="list1">
+                <li>리스트1</li>
+                <li>리스트2</li>
+                <li>리스트3</li>
+                <li>리스트4</li>
+                <li>리스트5</li>
+                <li>리스트6</li>
+                <li>리스트7</li>
+            </ul>
+        </div>
+        <script>
+            let elements = document.querySelectorAll("li:nth-child(odd)");
+            
+            console.log(elements);
+
+            for(const $oddLi of elements) {
+                $oddLi.style.backgroundColor = "yellow";
+            }
+
+            $firstLi = document.querySelector("li");
+            $firstLi.style.color="red";
+
+            elements = document.querySelectorAll("li");
+            const $lastLi = elements[elements.length-1];
+            $lastLi.style.color="green";
+
+            elements = document.querySelectorAll("li");
+            const [a, b, ...thirdAfter] = elements;
+            
+            console.log(thirdAfter)
+
+            for($li of thirdAfter) {
+                $li.style.border = "2px dashed violet";
+            }
+            
+
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="wrap">
+            <ul id="fruits">
+                <li class="fr apple">사과</li>
+                <li class="fr banana">바나나</li>
+                <li class="fr grape">포도</li>
+            </ul>
+        </div>
+        <div class="box">
+
+        </div>
+        <script>
+            const $fruits = document.getElementById("fruits");
+            const $wrap = $fruits.parentElement;
+
+            console.log($wrap);
+
+            const [$apple, $banana, $grape] = $wrap.firstElementChild.children;
+            console.log($apple);
+            console.log($banana);
+            console.log($grape);
+
+            $banana.previousElementSibling.style.color = "blue";
+
+            $apple.nextElementSibling.nextElementSibling.style.background = "violet";
+            
+
+
+        </script>
+    </body>
+</html>
