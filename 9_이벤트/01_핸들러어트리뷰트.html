@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+        <style>
+
+            .box {
+                width: 100px;
+                height: 100px;
+                background: orange;
+                margin: 20px;
+            }
+            .box.red {
+                background: red;
+            }
+            .box.green {
+                background: yellowgreen;
+                font-size: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box" onclick="alert('첫 번째 박스 클릭함.');"></div>
+        <div class="box red" ondblclick="widthDouble()"; ></div>
+        <!--<div class="box green" onmouseover="document.querySelector('.green').textContent = '안녕';"></div>-->
+        <div class="box green" onmouseover="hello()" onmouseout="textDelete()"></div>
+
+        <script>
+            function widthDouble() {
+                const $redBox = document.querySelector('.red');
+                $redBox.style.width = '200px';
+            }
+
+            // box green에 마우스가 진입했을 때
+            // 내부 텍스트로 '안녕'이 추가되게 해주세요
+            // 마우스를 빠져나가면 텍스트가 없어지게 해주세요
+
+            const hello = function (){
+                const $greenBox = document.querySelector('.green');
+                $greenBox.textContent = '안녕';
+            }
+
+            textDelete = () => {
+                const $greenBox = document.querySelector('.green');
+                $greenBox.textContent='';
+            }
+            
+
+
+        </script>
+    </body>
+</html>

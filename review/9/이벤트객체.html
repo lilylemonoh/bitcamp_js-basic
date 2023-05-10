@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+    </head>
+    <body>
+        <p>아무곳이나 클릭하세요!</p>
+        <em class="msg"></em>
+
+        <hr><hr><hr>
+
+        <input type="text" id="text">
+        <p class="show"></p>
+
+        <script>
+            document.onclick = function(e) {
+                //console.log(e);
+                const {x, y} = e;
+                
+                $em = document.querySelector('em');
+                $em.textContent = `x : ${x}, y : ${y}`;
+            };
+
+            const $input = document.querySelector('input');
+            function inputKeyUp(e) {
+                console.log(e);
+                const $show = document.querySelector('.show');
+
+                $show.textContent = $input.value;
+                console.log($input.value);
+            }
+
+            $input.addEventListener('keyup', inputKeyUp);
+            
+
+        </script>
+    </body>
+</html>

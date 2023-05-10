@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+    </head>
+    <body>
+
+        <input type="email" id="account" value="abc@gmail.com">
+
+        <script>
+            const $input = document.querySelector('input');
+
+            console.dir($input);
+
+            console.log($input.attributes.id.value);
+
+            $input.attributes.id.value = "acc";
+            $input.attributes.value.value = "zzz";
+            $input.attributes.type.value = "chechbox";
+
+        </script>
+
+    </body>
+</html>

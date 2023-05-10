@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+        <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background: yellow;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="box" id="item" title="안녕하세요"></div>
+
+        <script>
+            const $box = document.querySelector('.box');
+            const hello = $box.getAttribute("title");
+            console.log(hello);
+            
+            $box.setAttribute('id', "ddd");
+            $box.setAttribute('style', 'border-radius:40%');
+            $box.removeAttribute('id');
+
+            let result = $box.hasAttribute('id');
+            console.log(result);
+
+        </script>
+
+    </body>
+</html>

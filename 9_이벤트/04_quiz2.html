@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+        <style>
+            .hide {
+                display : none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="lunchmenu">
+            <button id="showMenu">메뉴 추천!</button>
+            <!--<ul>
+                <li>피자</li>
+                <li>치킨</li>
+                <li>탕수육</li>
+                <li>김치볶음밥</li>
+            </ul> -->
+        </div>
+        
+        <script>
+            //css와 js를 적절히 사용해서
+            // 처음에는 ul이 안 보이다가, 메뉴 추천 버튼을 누르면
+            // ul이 노출되도록 이벤트를 구현해주세요.
+
+            $button = document.querySelector('#showMenu');
+            $ul = document.querySelector('ul');
+
+/*            $ul.classList.add('hide');
+
+            const show = () => {
+                $ul.classList.remove('hide');
+            }
+
+            $button.onclick = show;*/
+
+
+            // 코드 까도 안 보이게 하는 방법
+            const showText2 = function() {
+                $body = document.querySelector('body');
+                $body.innerHTML += `            <ul>
+                    <li>피자</li>
+                    <li>치킨</li>
+                    <li>탕수육</li>
+                    <li>김치볶음밥</li>
+                </ul>`;
+            }
+
+            $button.onclick = showText2;
+
+
+        </script>
+    
+
+    </body>
+</html>
