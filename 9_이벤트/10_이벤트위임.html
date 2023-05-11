@@ -17,6 +17,7 @@
                 cursor: pointer;
                 background: orange;
                 margin-right: 10px;
+                margin-top : 10px;
             }
     
             .active {
@@ -49,9 +50,9 @@
 
             // 태그에서 클래스속성 active 제거
             const removeActive = () => {
-                for(li of [...$fruits.children]) {
-                    if(li.classList.contains('active')) {
-                        li.classList.remove('active');
+                for($li of [...$fruits.children]) {
+                    if($li.classList.contains('active')) {
+                        $li.classList.remove('active');
                     }
                 }
             };
@@ -72,10 +73,40 @@
                 // e.target.textContent
 
                 $em = document.querySelector("em");
-                $em.textContent= e.target.textContent;
-                
-                
+                $em.textContent= e.target.textContent;  
             }
+
+            /*
+                입력창에 과일 이름을 쓰고 '추가'버튼 누를 시 
+                입력창에 있던 텍스트가 <li id='텍스트'>텍스트<li> 
+                형식으로 ul의 마지막 자식으로 추가되도록 이벤트 설정 --- appendchild
+            */
+
+            //add 버튼을 변수로 저장하기
+            const $addBtn = document.getElementById('add');
+            const $textInput = document.querySelector('.text-box');
+
+            function makeNewFruit (){
+                //input 태그 내부에 작성된 값은 .value로 얻을 수 있습니다.
+                console.log(`현재 input에 기입된 텍스트 : ${$textInput.value}`);
+
+                // li 태그를 document를 이용해 생성해주세요.
+                const $newLi = document.createElement("li");
+                // 내부에 textContent로 위에서 입력한 Input의 텍스트를 입력해주세요.
+                $newLi.textContent = $textInput.value;
+                // ul태그의 자식으로 추가해주세요
+                $fruits.appendChild($newLi);
+
+                // id속성추가 .setAttribute("id", 추가할 id명) // 소문자로 바꾸는 메서드
+                $newLi.setAttribute('id', $textInput.value.toLowerCase());
+
+                // 제출버튼이 눌리면 input에 기입된 텍스트가 사라지게 해주세요.
+                $textInput.value = "";
+
+            }
+
+            $addBtn.onclick = makeNewFruit;
+
 
         </script>
 
